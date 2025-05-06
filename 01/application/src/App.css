@@ -1,8 +1,131 @@
-.recommend {
-  margin: 5px;
-  padding: 2pt;
-}
 
 ul {
   list-style: none;
+}
+
+.container {
+  width: 80%;
+}
+
+button {
+  border: none;
+}
+
+.recommend {
+  border-radius: 10px;
+  color: white;
+  background-color: crimson;
+  font-size: small;
+  white-space: nowrap;
+  padding: 3pt;
+  margin: 5pt;
+}
+
+.buy{
+  margin: 5pt;
+  padding: 5pt;
+  border-radius: 10px;
+  color: white;
+  background-color:dodgerblue;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.outofstock {
+  margin: 5pt;
+  padding: 5pt;
+  color: gray;
+}
+
+.product-name {
+  white-space: nowrap;
+}
+
+.product-prize {
+  white-space: nowrap;
+}
+
+.product {
+  width: 80%;
+  margin: 5pt;
+  padding: 10pt;
+  border-radius: 25px;
+  outline-style: solid;
+  outline-width: 1pt;
+  outline-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-list {
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: nowrap;
+}
+
+.cart-item {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-direction: space-between;
+  margin: 3pt;
+}
+
+.cart-item-amount {
+  position: absolute;
+  width: 20%;
+  left: 0;
+  margin-left: auto;
+  text-align: center;
+  margin-right: 10%;
+}
+
+.cart-item-prize {
+  position: absolute;
+  right: 20%;
+  text-align: center;
+  width: 50%;
+  margin-right: 5pt;
+}
+
+.cart-delete-button {
+  width: 20%;
+  position: absolute;
+  right: 0;
+  white-space: nowrap;
+  color: gray;
+  background: none;
+}
+
+.cart-tools {
+  position: absolute;
+  width: 30%;
+  right: 0;
+}
+
+.cart-item-list {
+  width: 100%;
+  padding: 10pt;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: relative;
+  list-style: none;
+  background-color: lightblue;
+  border-radius: 10px;
+}
+
+li {
+  float: left;
+  width: 20%;
+}
+
+p {
+  text-align: center;
+  margin: 0px;
 }

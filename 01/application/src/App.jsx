@@ -13,7 +13,8 @@ function Product({product, addToCart}) {
 }
 
 function ProductList({productList, addToCart}) {
-  return (<ul className='product-list'>{productList.map(product =>
+  return (<ul className='product-list'>
+    {productList.map(product =>
   <li  key = {product.id}>
     <Product product={product} addToCart={addToCart}/>
   </li>
@@ -22,7 +23,9 @@ function ProductList({productList, addToCart}) {
 
 function CartItemList({productList, cartItems, deleteCartItem}) {
   return (
-    <ul>{cartItems.map(item =>
+    <ul className='cart-item-list'>
+      <li><b>장바구니</b></li>
+      {cartItems.map(item =>
       <li key = {item.id}>
         <CartItem product={productList[item.id]} amount={item.amount} deleteCartItem={deleteCartItem}/>
       </li>
@@ -34,9 +37,12 @@ function CartItem({product, amount, deleteCartItem}){
   return (
     <div className='cart-item'>
         <span className='cart-item-name'>{product.name}</span>
-        <span className='cart-item-amount'>{amount} </span>
-        <span className='cart-item-prize'>{(product.prize * amount)}</span>
-        <button className='cart-delete-button' onClick={() => deleteCartItem(product.id)}>삭제</button>
+        <span className='cart-tools'>
+          <span className='cart-item-amount'>{amount} </span>
+          <span className='cart-item-prize'>{(product.prize * amount)}</span>
+          <button className='cart-delete-button' onClick={() => deleteCartItem(product.id)}>삭제</button>
+        </span>
+        
     </div>
   )
 }
@@ -107,12 +113,12 @@ export default function App() {
   return (<div className='root'>
     <h1></h1>
     
-    <div>
+    <div className='container'>
       <button className='cart-button' onClick={toggleCart}>장바구니</button>
       {isCartOpened && <CartItemList productList={productList} cartItems={cartItems} deleteCartItem={deleteCartItem}/>}
     </div>
     
-    <div>
+    <div className='container'>
       <ProductList productList={productList} addToCart={addToCart}/>
     </div>
     </div>)
